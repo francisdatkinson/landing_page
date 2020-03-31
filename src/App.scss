@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'HomepageBaukasten-Book'; // a royalty-free close substitute for Gotham, falling back to Arial
+  src: local('HomepageBaukasten-Book'), url(./fonts/HomepageBaukasten-Book.ttf) format('truetype');
+}
+
 .App {
   text-align: center;
+  overflow: hidden;
+  font-family: "HomepageBaukasten-Book", sans-serif; // a royalty-free close substitute for Gotham, falling back to Arial
 }
 
 .App-logo {
@@ -21,7 +28,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000;
 }
 
 .App-link {
