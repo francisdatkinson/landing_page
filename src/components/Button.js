@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../App.scss';
 
-function Button() {
+function Button(props) {
     return (
-      <div className="Button">
+      <div className="Button" label={props.label}>
+        <p className="Label">{props.label}</p>
       </div>
     );
   }

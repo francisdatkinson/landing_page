@@ -21,72 +21,154 @@ h1, h2, h3, h4, h5, h6, p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: #000;
   text-align: left;
+  user-select: none;
 }
 
-.App-logo {
-  height: 2rem;
+.Logo {
+  height: 1.4rem;
   display: flex;
   align-self: flex-start;
   pointer-events: none;
+  position: relative;
+  bottom: 0.14rem;
 }
 
 .Card {
   background-color: #fff;
-  padding: 3rem;
-  box-shadow: 0px 0px 2px #ddd;
+  padding: 2.5rem 2rem 1.9rem 2rem;
+  box-shadow: 0px 1px 4px #eee;
+  width: 18.9rem;
 
   & h1 {
     font-weight: 800;
     color: #4b484a;
-    font-size: 1.6rem;
-    margin: 2rem 0 0.4rem 0;
+    font-size: 1.43rem;
+    margin: 1.3rem 0 0 0;
   }
 
   & h2 {
     font-weight: 200;
-    font-size: 1rem;
+    font-size: 0.744rem;
     color: #c2c1c1;
+    margin: 0.6rem 0 0 0;
   }
 
   & form {
-    padding: 3rem 0;
+    padding: 2.65rem 0 0 0;
   }
 }
 .Input {
   text-align: left;
-  font-size: 10px;
+  font-size: 1rem;
+  width: 100%;
 
   & input {
-    width: calc(100% - 3rem);
+    width: calc(100% - 1.5rem);
     text-align: left;
     border: 0.5px solid #f0f0f0;
     border-radius: 3px;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.6rem;
+    font-size: 0.7rem;
     color: #333;
 
     &:focus {
       outline-color: #279150;
     }
   }
+
+  & .Label {
+    color: #868485;
+    font-size: 0.66rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &.CheckboxInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+    margin-top: 0.8rem;
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    & p {
+      padding: 0;
+    }
+
+    & .Checkbox {
+      height: 0.9rem;
+      width: 0.9rem;
+      border-radius: 0.25rem;
+      margin-right: 0.3rem;
+      background-color: #eee;
+      transition: all 0.05s linear;
+
+      &.checked {
+        background-color: #37a9e0;
+      }
+    }
+
+    &:hover input ~ .Checkmark {
+      background-color: #ccc;
+    }
+  }
 }
 
-.Input .Label {
-  color: #868485;
-  font-size: 0.8rem;
-  padding-bottom: 0.5rem;
-}
+.Button {
+  border: 0.5px solid #f0f0f0;
+  border-radius: 0.4rem;
+  display: flex;
+  flex: 0;
+  margin-top: 2.4rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s linear;
 
+  & .Label {
+    color: #2b2228;
+    align-self: center;
+    padding: 0.75rem 1.65rem;
+    font-size: 0.7rem;
+    transition: inherit;
+  }
+
+  &:hover {
+    background-color: #2eaf5f;
+    border-color: #2eaf5f;
+    
+    & .Label {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    background-color: #fff;
+    border-color: #2eaf5f;
+    
+    & .Label {
+      color: #2eaf5f;
+    }
+  }
+}
 
 
 
 .gren {
   position: absolute;
-  top: 0;
-  // opacity: 0.5;
+  transform: translateX(-2rem) translateY(-2.5rem);
+  opacity: 0.5;
   filter: grayscale(1);
-  width: 100%;
+  width: 365.39px;
 }
