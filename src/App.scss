@@ -1,3 +1,5 @@
+$accent: #2eaf5f;
+
 @font-face {
   font-family: 'HomepageBaukasten-Book'; // a royalty-free close substitute for Gotham, falling back to Arial
   src: local('HomepageBaukasten-Book'), url(./fonts/HomepageBaukasten-Book.ttf) format('truetype');
@@ -5,6 +7,7 @@
 
 body, html {
   overflow: hidden;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -91,19 +94,12 @@ h1, h2, h3, h4, h5, h6, p {
     cursor: default;
     margin-top: 0.8rem;
 
-    & input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-
     & p {
       padding: 0;
     }
 
     & .Checkbox {
+      user-select: normal;
       height: 0.9rem;
       width: 0.9rem;
       border-radius: 0.25rem;
@@ -114,10 +110,35 @@ h1, h2, h3, h4, h5, h6, p {
       &.checked {
         background-color: #37a9e0;
       }
+
+      &:after {
+        content: "";
+        display: none;
+      }
+
+      &.checked:after {
+        display: block;
+      }
+
+      &:after {
+        left: 9px;
+        top: 5px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 1.5px 1.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: translateX(0.3rem) translateY(0.1rem) rotate(45deg) scale(0.8);
+      }
     }
 
-    &:hover input ~ .Checkbox {
+    &:hover .Checkbox {
       background-color: #ccc;
+    }
+
+    &:hover .Checkbox.checked {
+      background-color: #37a9e0;
     }
   }
 }
@@ -145,8 +166,8 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   &:hover {
-    background-color: #2eaf5f;
-    border-color: #2eaf5f;
+    background-color: $accent;
+    border-color: $accent;
     
     & .Label {
       color: #fff;
@@ -155,20 +176,10 @@ h1, h2, h3, h4, h5, h6, p {
 
   &:active {
     background-color: #fff;
-    border-color: #2eaf5f;
+    border-color: $accent;
     
     & .Label {
-      color: #2eaf5f;
+      color: $accent;
     }
   }
-}
-
-
-
-.gren {
-  position: absolute;
-  transform: translateX(-2rem) translateY(-2.5rem);
-  opacity: 0.5;
-  filter: grayscale(1);
-  width: 365.39px;
 }
