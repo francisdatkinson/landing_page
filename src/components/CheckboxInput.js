@@ -1,37 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import '../App.scss';
 
-function CheckboxInput(props) {
-	return (
-		<div className='Input CheckboxInput'>
-			<input type='checkbox'></input>
-			<span className='Checkmark' isChecked={props.isChecked}></span>
-			<p className='Label'>{props.label}</p>
-		</div>
-	);
+class CheckboxInput extends React.Component {
+	render() {
+		return (
+			<div className='Input CheckboxInput' >
+				<span className={`Checkbox ${this.props.isChecked ? 'checked' : ''}`}></span>
+				<p className='Label'>{this.props.label}</p>
+			</div>
+		);
+	}
 }
 
-// class CheckboxInput extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			isShow: true,
-// 		};
-// 	}
-// 	render() {
-// 		return (
-// 			<div className='Input CheckboxInput'>
-// 			<input type='checkbox'></input>
-// 			<span className='Checkmark' isChecked={props.isChecked}></span>
-// 			<p className='Label'>{props.label}</p>
-// 		</div>
-// 		);
-// 	}
-// }
-
 CheckboxInput.propTypes = {
-	label: String
+	label: PropTypes.string,
+	isChecked: PropTypes.bool
 }
   
 export default CheckboxInput;
