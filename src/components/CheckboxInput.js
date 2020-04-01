@@ -1,12 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import '../App.scss';
 
+CheckboxInput.propTypes = {
+	label: PropTypes.string,
+	isChecked: PropTypes.bool
+}
+
 function CheckboxInput(props) {
+
 	return (
 		<div className='Input CheckboxInput'>
 			<input type='checkbox'></input>
-			<span className='Checkmark' isChecked={props.isChecked}></span>
+			<span className={`Checkbox ${props.isChecked ? 'checked' : ''}`}></span>
 			<p className='Label'>{props.label}</p>
 		</div>
 	);
@@ -29,9 +35,5 @@ function CheckboxInput(props) {
 // 		);
 // 	}
 // }
-
-CheckboxInput.propTypes = {
-	label: String
-}
   
 export default CheckboxInput;
