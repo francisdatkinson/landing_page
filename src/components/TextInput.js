@@ -1,6 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import '../App.scss';
+
+TextInput.propTypes = {
+	label: PropTypes.string
+}
 
 function TextInput(props) {
 	return (
@@ -9,10 +13,6 @@ function TextInput(props) {
 			<input type='text'></input>
 		</div>
 	);
-}
-
-TextInput.propTypes = {
-	label: String
 }
   
 export default TextInput;
