@@ -8,9 +8,9 @@ TextInput.propTypes = {
 
 function TextInput(props) {
 	return (
-		<div className='Input'>
-			<p className='Label'>{props.label}</p>
-			<input type='text'></input>
+		<div className="Input">
+			<p className="Label">{props.label}</p>
+			<input name="input" type="text"></input>
 		</div>
 	);
 }
